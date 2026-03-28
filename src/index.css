@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 280 50% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 280 40% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 14%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 300 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 280 40% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 47% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 180 100% 50%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 47% 18%;
+    --input: 222 47% 18%;
+    --ring: 267 84% 65%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens for Rockstar Portfolio */
+    --gradient-primary: linear-gradient(135deg, hsl(300 100% 50%), hsl(180 100% 50%));
+    --gradient-dark: linear-gradient(180deg, hsl(280 50% 8%), hsl(280 50% 5%));
+    --glow-primary: 0 0 30px hsl(300 100% 50% / 0.5);
+    --glow-accent: 0 0 30px hsl(180 100% 50% / 0.5);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
