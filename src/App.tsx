@@ -28,9 +28,9 @@ const App = () => (
           ]}
           activeHref="#"
           ease="power2.easeOut"
-          baseColor="#ff00ff"
-          pillColor="#050110"
-          hoveredPillTextColor="#00ffff"
+          baseColor="#ffaa00"
+          pillColor="#000000"
+          hoveredPillTextColor="#ffffff"
           pillTextColor="#ffffff"
           className="z-50"
         />
