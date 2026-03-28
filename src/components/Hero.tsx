@@ -38,8 +38,6 @@ const Hero = () => {
             <motion.img 
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1.5, opacity: 1 }}
-              behindGlowColor="rgba(255, 170, 0, 0.4)"
-              innerGradient="linear-gradient(145deg,#1a110a 0%,#ffaa0022 100%)"
               transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
               src={avatarImg} 
               alt="Vice City Avatar" 
