@@ -43,8 +43,8 @@ const About = () => {
               enableTilt={true}
               enableMobileTilt={false}
               behindGlowEnabled={true}
-              behindGlowColor="rgba(125, 190, 255, 0.67)"
-              innerGradient="linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)"
+              behindGlowColor="rgba(255, 170, 0, 0.4)"
+              innerGradient="linear-gradient(145deg, #1a1a1a 0%, #ffaa0022 100%)"
               onContactClick={() => window.location.href = 'mailto:milantiwari2003@gmail.com'}
             />
           </motion.div>

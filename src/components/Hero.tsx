@@ -14,7 +14,7 @@ const Hero = () => {
         <Silk
           speed={4}
           scale={1.2}
-          color="#ff00ff"
+          color="#ffaa00"
           noiseIntensity={1.2}
           rotation={0}
         />
@@ -38,6 +38,8 @@ const Hero = () => {
             <motion.img 
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1.5, opacity: 1 }}
+              behindGlowColor="rgba(255, 170, 0, 0.4)"
+              innerGradient="linear-gradient(145deg,#1a110a 0%,#ffaa0022 100%)"
               transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
               src={avatarImg} 
               alt="Vice City Avatar" 
@@ -45,7 +47,7 @@ const Hero = () => {
             />
           </div>
           <GradientText
-            colors={["#ff00ff", "#bd93f9", "#00ffff", "#ff00ff"]}
+            colors={["#ffaa00", "#ff8800", "#ffffff", "#ffaa00"]}
             animationSpeed={5}
             className="text-5xl md:text-7xl font-bold leading-tight"
           >
@@ -68,7 +70,7 @@ const Hero = () => {
 
         <div className="mb-4">
           <GradientText
-            colors={["#ffffff", "#ff00ff", "#00ffff", "#ffffff"]}
+            colors={["#ffffff", "#ffaa00", "#333333", "#ffffff"]}
             animationSpeed={8}
             className="text-xl md:text-2xl font-semibold"
           >
