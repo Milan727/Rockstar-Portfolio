@@ -34,14 +34,16 @@ const Hero = () => {
         className="relative z-10 text-center max-w-4xl mx-auto"
       >
         <div className="mb-6 flex flex-col items-center">
-          <motion.img 
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
-            src={avatarImg} 
-            alt="Vice City Avatar" 
-            className="w-40 h-40 md:w-56 md:h-56 mb-8 rounded-full border-4 border-primary glow-primary object-cover"
-          />
+          <div className="w-40 h-40 md:w-56 md:h-56 mb-8 rounded-full border-4 border-primary glow-primary overflow-hidden relative">
+            <motion.img 
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1.5, opacity: 1 }}
+              transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
+              src={avatarImg} 
+              alt="Vice City Avatar" 
+              className="w-full h-full object-cover origin-[25%_40%]"
+            />
+          </div>
           <GradientText
             colors={["#ff00ff", "#bd93f9", "#00ffff", "#ff00ff"]}
             animationSpeed={5}
