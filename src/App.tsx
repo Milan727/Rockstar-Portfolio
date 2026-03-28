@@ -3,6 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PillNav from "./components/PillNav";
+import avatar from "./assets/avatar.png";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -14,6 +16,24 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <PillNav 
+          logo={avatar}
+          logoAlt="Milan Tiwari"
+          items={[
+            { label: 'Home', href: '#' },
+            { label: 'About', href: '#about' },
+            { label: 'Projects', href: '#projects' },
+            { label: 'Case Study', href: '#bug-report' },
+            { label: 'Contact', href: '#contact' }
+          ]}
+          activeHref="#"
+          ease="power2.easeOut"
+          baseColor="#ff00ff"
+          pillColor="#050110"
+          hoveredPillTextColor="#00ffff"
+          pillTextColor="#ffffff"
+          className="z-50"
+        />
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
