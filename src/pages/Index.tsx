@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import BugReport from "@/components/BugReport";
 import Achievements from "@/components/Achievements";
 import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
@@ -14,6 +15,7 @@ const Index = () => {
       <About />
       <Skills />
       <Projects />
+      <BugReport />
       <Certifications />
       <Achievements />
       <Contact />
@@ -24,7 +26,7 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
               <h3 className="text-xl font-bold text-gradient mb-2">Milan Tiwari</h3>
-              <p className="text-muted-foreground text-sm">Software Developer | Python & AI Enthusiast</p>
+              <p className="text-muted-foreground text-sm">QA Analyst | Game Tester | Rockstar Games Applicant</p>
             </div>
 
             <div className="flex gap-4">
