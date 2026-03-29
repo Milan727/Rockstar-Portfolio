@@ -127,7 +127,20 @@ const Silk = ({
     );
 
     return (
-        <Canvas dpr={[1, 2]} frameloop="always">
+        <Canvas
+          dpr={[1, 2]}
+          frameloop="always"
+          onCreated={({ gl }) => {
+            const canvas = gl.domElement;
+            canvas.addEventListener('webglcontextlost', (e) => {
+              e.preventDefault();
+              console.warn('[Silk] WebGL context lost — will restore automatically.');
+            });
+            canvas.addEventListener('webglcontextrestored', () => {
+              console.info('[Silk] WebGL context restored.');
+            });
+          }}
+        >
             <SilkPlane ref={meshRef} uniforms={uniforms} />
         </Canvas>
     );

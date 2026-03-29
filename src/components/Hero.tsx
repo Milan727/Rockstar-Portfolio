@@ -3,17 +3,20 @@ import { ArrowDown, Github, Linkedin, Instagram, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import DecryptedText from "./DecryptedText";
 import avatarImg from "@/assets/avatar.png";
-import CSSilk from "./CSSilk";
+import Silk from "./Silk";
 import GradientText from "./GradientText";
 
 const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-x-hidden px-4">
-      {/* Silk CSS background */}
+      {/* Silk WebGL background */}
       <div className="absolute inset-0">
-        <CSSilk
-          color="#ffaa00"
+        <Silk
           speed={4}
+          scale={1.2}
+          color="#ffaa00"
+          noiseIntensity={1.2}
+          rotation={0}
         />
       </div>
 
