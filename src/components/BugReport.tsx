@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import { Bug, AlertTriangle, Terminal, CheckCircle2, ChevronRight } from "lucide-react";
+import { Bug, AlertTriangle, Terminal, CheckCircle2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
 
 const BugReport = () => {
   return (
@@ -131,12 +130,6 @@ const BugReport = () => {
                 <p className="text-sm text-muted-foreground mb-3">
                   Isolated variables using systematic elimination. Confirmed bug is exclusive to rainy weather states due to the modified traction physics calculation loop interfering with the global collision resolver.
                 </p>
-                <Link
-                  to="/logs"
-                  className="flex items-center text-xs text-primary font-mono hover:text-accent cursor-pointer transition-colors"
-                >
-                   View Full Logs <ChevronRight size={14} />
-                </Link>
               </div>
             </div>
           </div>
