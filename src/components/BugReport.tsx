@@ -8,7 +8,6 @@ const BugReport = () => {
   const [showLogs, setShowLogs] = useState(false);
 
   return (
-    <>
     <section id="bug-report" className="py-24 px-4 bg-background">
       <div className="max-w-6xl flex flex-col items-center mx-auto">
         <motion.div 
@@ -136,19 +135,20 @@ const BugReport = () => {
                   Isolated variables using systematic elimination. Confirmed bug is exclusive to rainy weather states due to the modified traction physics calculation loop interfering with the global collision resolver.
                 </p>
                 <button
-                  onClick={() => setShowLogs(true)}
+                  onClick={() => setShowLogs(!showLogs)}
                   className="flex items-center text-xs text-primary font-mono hover:text-accent cursor-pointer transition-colors"
                 >
-                   View Full Logs <ChevronRight size={14} />
+                   {showLogs ? 'Hide Logs' : 'View Full Logs'} <ChevronRight size={14} className={`transition-transform ${showLogs ? 'rotate-90' : ''}`} />
                 </button>
               </div>
             </div>
           </div>
+
+          {/* Inline Terminal - expands below the card content */}
+          <TerminalModal isOpen={showLogs} onClose={() => setShowLogs(false)} />
         </motion.div>
       </div>
     </section>
-    <TerminalModal isOpen={showLogs} onClose={() => setShowLogs(false)} />
-    </>
   );
 };
 

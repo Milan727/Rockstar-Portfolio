@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Terminal } from "lucide-react";
+import { Terminal } from "lucide-react";
 
 interface TerminalModalProps {
   isOpen: boolean;
@@ -93,20 +93,13 @@ const TerminalModal = ({ isOpen, onClose }: TerminalModalProps) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
-          onClick={onClose}
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          className="overflow-hidden mt-6"
         >
-          <motion.div
-            initial={{ opacity: 0, y: 40, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 40, scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="w-full max-w-3xl bg-[#0a0a0a] border border-primary/30 rounded-xl shadow-2xl overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="bg-[#0a0a0a] border border-primary/30 rounded-xl shadow-2xl overflow-hidden">
             {/* Title bar */}
             <div className="flex items-center justify-between px-4 py-3 bg-[#111] border-b border-white/10">
               <div className="flex items-center gap-2">
@@ -123,9 +116,9 @@ const TerminalModal = ({ isOpen, onClose }: TerminalModalProps) => {
                 </div>
                 <button
                   onClick={onClose}
-                  className="text-white/40 hover:text-white transition-colors"
+                  className="text-white/40 hover:text-white transition-colors text-xs font-mono"
                 >
-                  <X size={18} />
+                  [CLOSE]
                 </button>
               </div>
             </div>
@@ -133,24 +126,21 @@ const TerminalModal = ({ isOpen, onClose }: TerminalModalProps) => {
             {/* Terminal body */}
             <div
               ref={scrollRef}
-              className="h-[400px] overflow-y-auto p-4 font-mono text-[13px] leading-relaxed scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent"
+              className="h-[350px] overflow-y-auto p-4 font-mono text-[13px] leading-relaxed"
             >
               {lines.map((line, idx) => (
-                <motion.div
+                <div
                   key={idx}
-                  initial={{ opacity: 0, x: -8 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.15 }}
                   className={`${getColor(line.type)} whitespace-pre`}
                 >
                   {line.text}
-                </motion.div>
+                </div>
               ))}
               {lines.length < LOG_LINES.length && (
                 <span className="inline-block w-2 h-4 bg-primary animate-pulse ml-0.5" />
               )}
             </div>
-          </motion.div>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

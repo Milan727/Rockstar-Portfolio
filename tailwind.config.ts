@@ -112,10 +112,20 @@ export default {
         },
         "glow": {
           "0%, 100%": {
-            boxShadow: "0 0 20px hsl(300 100% 50% / 0.4)",
+            boxShadow: "0 0 20px hsl(39 100% 50% / 0.4)",
           },
           "50%": {
-            boxShadow: "0 0 40px hsl(300 100% 50% / 0.7), 0 0 60px hsl(180 100% 50% / 0.5)",
+            boxShadow: "0 0 40px hsl(39 100% 50% / 0.7), 0 0 60px hsl(25 100% 50% / 0.5)",
+          },
+        },
+        "fadeIn": {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(-8px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0)",
           },
         },
       },
