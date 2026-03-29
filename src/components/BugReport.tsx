@@ -1,12 +1,9 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Bug, AlertTriangle, Terminal, CheckCircle2, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import TerminalModal from "./TerminalModal";
+import { Link } from "react-router-dom";
 
 const BugReport = () => {
-  const [showLogs, setShowLogs] = useState(false);
-
   return (
     <section id="bug-report" className="py-24 px-4 bg-background">
       <div className="max-w-6xl flex flex-col items-center mx-auto">
@@ -134,18 +131,15 @@ const BugReport = () => {
                 <p className="text-sm text-muted-foreground mb-3">
                   Isolated variables using systematic elimination. Confirmed bug is exclusive to rainy weather states due to the modified traction physics calculation loop interfering with the global collision resolver.
                 </p>
-                <button
-                  onClick={() => setShowLogs(!showLogs)}
+                <Link
+                  to="/logs"
                   className="flex items-center text-xs text-primary font-mono hover:text-accent cursor-pointer transition-colors"
                 >
-                   {showLogs ? 'Hide Logs' : 'View Full Logs'} <ChevronRight size={14} className={`transition-transform ${showLogs ? 'rotate-90' : ''}`} />
-                </button>
+                   View Full Logs <ChevronRight size={14} />
+                </Link>
               </div>
             </div>
           </div>
-
-          {/* Inline Terminal - expands below the card content */}
-          <TerminalModal isOpen={showLogs} onClose={() => setShowLogs(false)} />
         </motion.div>
       </div>
     </section>
